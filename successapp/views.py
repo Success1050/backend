@@ -19,6 +19,6 @@ class CommentSerialze(ModelViewSet):
 
     @action(detail= False, methods=(['GET']))
     def recent(self, request):
-        recent_comment= Comment.objects.all()[:3]
+        recent_comment= Comment.objects.all()[:6]
         serializer= CommentSerializers(recent_comment, many= True)
         return Response(serializer.data)
